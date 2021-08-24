@@ -2,6 +2,8 @@ import React from 'react';
 import CustomButton from '../custom-button/custom-button.component'
 import FormInput from '../form-input/form-input.component';
  
+import { signInWithGoogle } from '../../firebase/firebase.utils.js'
+
 import './sign-in.styles.scss'
 
 export default class SignIn extends React.Component {
@@ -47,7 +49,10 @@ export default class SignIn extends React.Component {
         label="password"
             required
           />
+          <div className="buttons">
           <CustomButton type="submit">Sign In</CustomButton>
+          <CustomButton onClick={signInWithGoogle} isGoogleSignin >Sign in with google</CustomButton>
+          </div>
         </form>
       </div>
     );
